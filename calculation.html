@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Object</title>
+<script>
+    const calculator = {
+   Add: function (x, y) {
+      return x + y;
+    },
+   Subtract: function (x, y) {
+      return x - y;
+    },
+    Multiply: function (x, y) {
+      return x * y;
+    },
+    Divide: function (x, y) {
+      try {
+        if (y === 0) {
+          throw new Error("Division by zero is not allowed");
+        }
+        return x / y;
+      } catch (error) {
+        console.error(error.message);
+      }
+    },
+
+  };
+  console.log("Addition:", calculator.Add(20, 10));
+  console.log("Subtraction:", calculator.Subtract(100, 50));
+  console.log("Multiplication:", calculator.Multiply(6, 6));
+  calculator.Divide(20, 0);
+  
+</script>
